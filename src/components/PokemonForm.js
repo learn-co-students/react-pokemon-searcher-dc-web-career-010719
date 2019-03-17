@@ -8,8 +8,8 @@ class PokemonForm extends React.Component {
     this.state = {
       name: '',
       hp: '',
-      frontUrl: '',
-      backUrl: ''
+      front: '',
+      back: ''
     };
   }
 
@@ -19,8 +19,8 @@ class PokemonForm extends React.Component {
     this.setState({
       name: '',
       hp: '',
-      frontUrl: '',
-      backUrl: ''
+      front: '',
+      back: ''
     });
   };
 

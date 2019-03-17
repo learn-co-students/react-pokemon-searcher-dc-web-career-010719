@@ -44,8 +44,8 @@ class PokemonPage extends React.Component {
     const data = {
       name: val.name,
       hp: val.hp,
-      frontUrl: val.frontUrl,
-      backUrl: val.backUrl
+      front: val.front,
+      back: val.back
     };
     fetch(URL, {
       method: 'POST',
