@@ -15,18 +15,17 @@ class PokemonPage extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.resetComponent();
-  }
 
   componentDidMount() {
+    console.log("hi")
     fetch(URL)
       .then(res => res.json())
       .then(pokemons => this.setState({ pokemons: pokemons }));
   }
 
-  resetComponent = () =>
-    this.setState({ isLoading: false, results: [], value: '' });
+  componentDidUpdate(){
+  console.log("did update")
+  }
 
   handleSearchChange = (e, { value }) => {
     this.setState({ searchTerm: value });
@@ -34,7 +33,6 @@ class PokemonPage extends React.Component {
   };
 
   searchPokemon = () => {
-    // debugger
     return this.state.pokemons.filter(p =>
       p.name.includes(this.state.searchTerm)
     );
@@ -46,7 +44,7 @@ class PokemonPage extends React.Component {
       stats: [
         {
         value: val.hp,
-        name: 'name'
+        name: 'hp'
       }
     ],
       sprites: {

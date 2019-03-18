@@ -12,7 +12,7 @@ class PokemonCard extends React.Component {
   getStat = val => {
     let statArray;
     statArray = this.props.pokemon.stats.filter(stat => stat.name === val);
-    return statArray[0].value;
+    return statArray[0] ? statArray[0].value : null
   };
 
   handleClick = () => {

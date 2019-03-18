@@ -25,10 +25,7 @@ class PokemonForm extends React.Component {
   };
 
   handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
+   typeof event.target.value === 'string' ? this.setState({[event.target.name]: event.target.value}): this.setState({[event.target.name]: parseInt(event.target.value)})}
 
   render() {
     return (
@@ -56,16 +53,16 @@ class PokemonForm extends React.Component {
               fluid
               label="Front Image URL"
               placeholder="url"
-              name="frontUrl"
-              value={this.state.frontUrl}
+              name="front"
+              value={this.state.front}
               onChange={this.handleChange}
             />
             <Form.Input
               fluid
               label="Back Image URL"
               placeholder="url"
-              name="backUrl"
-              value={this.state.backUrl}
+              name="back"
+              value={this.state.back}
               onChange={this.handleChange}
             />
           </Form.Group>
