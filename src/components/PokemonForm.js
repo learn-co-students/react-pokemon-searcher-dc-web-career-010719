@@ -2,15 +2,13 @@ import React from 'react'
 import { Form } from 'semantic-ui-react'
 
 class PokemonForm extends React.Component {
-  constructor() {
-    super()
-
-    this.state = {
-      name: '',
-      hp: '',
-      frontUrl: '',
-      backUrl: ''
-    }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    let name = event.target.querySelectorAll('input')[0].value
+    let hp = event.target.querySelectorAll('input')[1].value
+    let front = event.target.querySelectorAll('input')[2].value
+    let back = event.target.querySelectorAll('input')[3].value
+    this.props.onSubmit({name:name, stats:[{name: 'hp', value: hp}], sprites: {front: front, back: back}})
   }
 
   render() {
