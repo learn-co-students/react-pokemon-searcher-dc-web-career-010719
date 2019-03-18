@@ -43,9 +43,16 @@ class PokemonPage extends React.Component {
   addNewPokemon = val => {
     const data = {
       name: val.name,
-      hp: val.hp,
-      front: val.front,
-      back: val.back
+      stats: [
+        {
+        value: val.hp,
+        name: 'name'
+      }
+    ],
+      sprites: {
+        front: val.front,
+        back: val.back
+      }
     };
     fetch(URL, {
       method: 'POST',
@@ -55,10 +62,11 @@ class PokemonPage extends React.Component {
       body: JSON.stringify(data)
     })
       .then(res => res.json())
-      .then(pokemon => this.setState({
-        pokemons: [...this.state.pokemons, pokemon]
-      })
-      )
+      .then(pokemon =>
+        this.setState({
+          pokemons: [...this.state.pokemons, pokemon]
+        })
+      );
   };
 
   render() {
@@ -80,3 +88,8 @@ class PokemonPage extends React.Component {
 }
 
 export default PokemonPage;
+
+
+// const {listing: {title, type, location: {city, state, country}}} = this.props;
+
+// {listing: {title, type, location: {city, state, country}}
