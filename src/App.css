@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 40px;
 }
 
 .App-logo {
@@ -20,4 +21,18 @@
 
 .App-intro {
   font-size: large;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
 }
